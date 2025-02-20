@@ -3,17 +3,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class DifficultyUI : MonoBehaviour
+public class DifficultyUI : UIBase
 {
     PointerEventHandler _difficultyUpButton;
     PointerEventHandler _difficultyDownButton;
     TextMeshProUGUI _difficultyText;
 
-    private void Awake()
+    private new void Awake()
     {
-        GetComponentsInChildren<Transform>();
+        base.Awake();
+
     }
 
-
-    
 }
