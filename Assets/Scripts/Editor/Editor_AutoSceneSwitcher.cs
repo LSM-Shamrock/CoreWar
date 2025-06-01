@@ -4,11 +4,11 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [InitializeOnLoad]
-public static class AutoSceneSwitcher
+public static class Editor_AutoSceneSwitcher
 {
     static Scenes startScene = Scenes.LobbyScene;
 
-    static AutoSceneSwitcher()
+    static Editor_AutoSceneSwitcher()
     {
         EditorApplication.playModeStateChanged += OnPlayModeChanged;
     }
