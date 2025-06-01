@@ -53,5 +53,8 @@ TagManager:
   - name: UI
     uniqueID: 1547779213
     locked: 0
+  - name: Speechbubble
+    uniqueID: 1945868171
+    locked: 0
   m_RenderingLayers:
   - Default

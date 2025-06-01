@@ -3,43 +3,40 @@ using UnityEngine.UIElements;
 
 public class Lobby_MonsterCardButtonGenerator : ObjectBase
 {
-    private void Start()
+    void Start()
     {
         Init();
     }
 
-    private void Init()
+    void Init()
     {
-        Vector3 position = new();
+        Init_CardList();
+        Init_CardDeck();
+    }
 
-        position.x = -40f * 3;
-        position.y = -110f;
-        foreach (int i in Count(7))
+    void Init_CardList()
+    {
+        GameObject root = Utile.FindGameObject(Lobby_SceneGameObjects.MonsterCardButtonGroup_CardList);
+        GameObject prefab = Utile.LoadPrefab(Prefabs.Scene_LobbyScene.MonsterCardButton);
+        for (int i = 0; i < 18; i++)
         {
-            CreateCardButton(position);
-            position.x += 40f;
-        }
-
-        position.y = 120f;
-        foreach (int i in Count(9))
-        {
-            position.x = 180f;
-
-            CreateCardButton(position);
-            
-            position.x += 40f;
-
-            CreateCardButton(position);
-            
-            position.y -= 30f;
+            var go = Utile.CreateClone(prefab);
+            go.transform.SetParent(root.transform);
+            var card = go.GetComponent<Lobby_MonsterCardButton>();
+            card.Init();
         }
     }
 
-    private void CreateCardButton(Vector3 position)
+    void Init_CardDeck()
     {
-        var prefab = Utile.LoadPrefab(Prefabs.MonsterCardButton);
-        var go = Utile.CreateClone(prefab);
-        go.transform.SetParent(transform);
-        go.transform.position = position;
+        GameObject root = Utile.FindGameObject(Lobby_SceneGameObjects.MonsterCardButtonGroup_CardDeck);
+        GameObject prefab = Utile.LoadPrefab(Prefabs.Scene_LobbyScene.MonsterCardButton);
+        for (int i = 0; i < 7; i++)
+        {
+            var go = Utile.CreateClone(prefab);
+            go.transform.SetParent(root.transform);
+            var card = go.GetComponent<Lobby_MonsterCardButton>();
+            card.Init();
+        }
     }
 }
