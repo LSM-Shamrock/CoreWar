@@ -105,7 +105,7 @@ public abstract class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
         {
             if (s_speechbubbleRoot == null)
             {
-                s_speechbubbleRoot = Utile.FindGameObject(CoreObjects.SpeechbubbleCanvas).transform;
+                s_speechbubbleRoot = Utile.FindGameObject(GuaranteedObjects.SpeechbubbleCanvas).transform;
             }
             return s_speechbubbleRoot;
         }
@@ -121,7 +121,7 @@ public abstract class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
         }
         else
         {
-            var prefab = Utile.LoadPrefab(Prefabs.Core.Speechbubble);
+            var prefab = Utile.LoadPrefab(Prefabs._Project.Speechbubble);
             var go = Instantiate(prefab, SpeechbubbleRoot);
             speechbubble = go.GetComponent<Speechbubble>();
             speechbubble.Init(transform);

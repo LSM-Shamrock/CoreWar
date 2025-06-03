@@ -1,5 +1,5 @@
 ﻿
-public enum CoreObjects
+public enum GuaranteedObjects
 {
     EventSystem,
     Camera,

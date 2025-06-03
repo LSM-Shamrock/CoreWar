@@ -1,7 +1,7 @@
 ﻿
 public class Prefabs 
 {
-    public enum Core
+    public enum _Project
     {
         Speechbubble,
     }

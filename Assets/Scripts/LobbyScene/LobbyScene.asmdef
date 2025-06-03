@@ -1,0 +1,16 @@
+{
+    "name": "LobbyScene",
+    "rootNamespace": "",
+    "references": [
+        "GUID:15defeacc80c5884e8b02087a5a3c4ce"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
