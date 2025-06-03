@@ -1,13 +1,12 @@
-﻿using UnityEngine;
-
-public class Prefabs
+﻿
+public class Prefabs 
 {
     public enum Core
     {
         Speechbubble,
     }
 
-    public enum Scene_LobbyScene
+    public enum LobbyScene
     {
         MonsterCardButton,
     }

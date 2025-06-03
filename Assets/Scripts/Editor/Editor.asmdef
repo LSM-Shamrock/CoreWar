@@ -1,4 +1,4 @@
-{
-	"name": "Editor",
-	"references" : ["Core"]
+﻿{
+	"name": "Editor", 
+	"references": ["Core", "Content"]
 }

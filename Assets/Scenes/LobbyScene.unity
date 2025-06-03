@@ -551,8 +551,8 @@ RectTransform:
   - {fileID: 1433552792}
   - {fileID: 591823245}
   - {fileID: 1170001111}
-  - {fileID: 1718365256}
   - {fileID: 1830531075}
+  - {fileID: 1718365256}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 1718365257}
   - component: {fileID: 1718365260}
   m_Layer: 5
-  m_Name: MonsterCardButtonGroup_CardList
+  m_Name: MonsterCardButtonGroup_CardCollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

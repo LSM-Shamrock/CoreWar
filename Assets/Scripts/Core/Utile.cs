@@ -83,10 +83,10 @@ public static class Utile
     public static T LoadResource<T>(Enum pathEnum) where T : UnityEngine.Object
     {
         Type type = typeof(T);
-        string name = pathEnum.ToString();
         string root = pathEnum.GetType().FullName;
         root = root.Replace('.', '/');
         root = root.Replace('+', '/');
+        string name = pathEnum.ToString();
         string path = root + '/' + name;
 
         if (s_resources.TryGetValue((type, path), out object saved))

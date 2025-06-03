@@ -1,0 +1,7 @@
+﻿{
+    "name": "Content.LobbyScene",
+    "references": [
+        "Core",
+        "Content"
+    ]
+}

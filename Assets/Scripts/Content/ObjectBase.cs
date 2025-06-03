@@ -9,8 +9,59 @@ public abstract class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     // 변수
     protected static float Difficulty;
-    protected static List<Sprites.Monsters> Deck;
 
+
+    protected static readonly Dictionary<Sprites.MonsterButtons, MonsterSummonInfo> monsterSummonInfo = new Dictionary<Sprites.MonsterButtons, MonsterSummonInfo>
+    {
+        [Sprites.MonsterButtons.Slime] = new MonsterSummonInfo
+        {
+            price = 496,
+            cooltime = 4,
+        },
+        [Sprites.MonsterButtons.Bat] = new MonsterSummonInfo
+        {
+            price = 730,
+            cooltime = 4,
+        },
+        [Sprites.MonsterButtons.Goblin] = new MonsterSummonInfo
+        {
+            price = 970,
+            cooltime = 10,
+        },
+        [Sprites.MonsterButtons.WaveSprit] = new MonsterSummonInfo
+        {
+            price = 1330,
+            cooltime = 20,
+        },
+        [Sprites.MonsterButtons.Skeleton] = new MonsterSummonInfo
+        {
+            price = 1710,
+            cooltime = 20,
+        },
+        [Sprites.MonsterButtons.Dragon] = new MonsterSummonInfo
+        {
+            price = 1840,
+            cooltime = 20,
+        },
+        [Sprites.MonsterButtons.Golem] = new MonsterSummonInfo
+        {
+            price = 2840,
+            cooltime = 15,
+        },
+        [Sprites.MonsterButtons.ElecDragon] = new MonsterSummonInfo
+        {
+            price = 4170,
+            cooltime = 35,
+        },
+    };
+    protected int GetMonsterSummonPrice(Sprites.MonsterButtons monsterType)
+    {
+        return monsterSummonInfo[monsterType].price;
+    }
+    protected int GetMonsterSummonCooltime(Sprites.MonsterButtons monsterType)
+    {
+        return monsterSummonInfo[monsterType].cooltime;
+    }
 
     // 흐름
     protected WaitUntil WaitUntil(Func<bool> predicate)
@@ -70,7 +121,7 @@ public abstract class ObjectBase : MonoBehaviour, IPointerEnterHandler, IPointer
         }
         else
         {
-            var prefab = Utile.LoadResource<GameObject>(Prefabs.Core.Speechbubble);
+            var prefab = Utile.LoadPrefab(Prefabs.Core.Speechbubble);
             var go = Instantiate(prefab, SpeechbubbleRoot);
             speechbubble = go.GetComponent<Speechbubble>();
             speechbubble.Init(transform);

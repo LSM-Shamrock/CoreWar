@@ -10,15 +10,15 @@ public class Lobby_MonsterCardButtonGenerator : ObjectBase
 
     void Init()
     {
-        Init_CardList();
         Init_CardDeck();
+        Init_CardCollection();
     }
 
-    void Init_CardList()
+    void Init_CardDeck()
     {
-        GameObject root = Utile.FindGameObject(Lobby_SceneGameObjects.MonsterCardButtonGroup_CardList);
-        GameObject prefab = Utile.LoadPrefab(Prefabs.Scene_LobbyScene.MonsterCardButton);
-        for (int i = 0; i < 18; i++)
+        GameObject root = Utile.FindGameObject(Lobby_SceneGameObjects.MonsterCardButtonGroup_CardDeck);
+        GameObject prefab = Utile.LoadPrefab(Prefabs.LobbyScene.MonsterCardButton);
+        for (int i = 0; i < 7; i++)
         {
             var go = Utile.CreateClone(prefab);
             go.transform.SetParent(root.transform);
@@ -27,11 +27,11 @@ public class Lobby_MonsterCardButtonGenerator : ObjectBase
         }
     }
 
-    void Init_CardDeck()
+    void Init_CardCollection()
     {
-        GameObject root = Utile.FindGameObject(Lobby_SceneGameObjects.MonsterCardButtonGroup_CardDeck);
-        GameObject prefab = Utile.LoadPrefab(Prefabs.Scene_LobbyScene.MonsterCardButton);
-        for (int i = 0; i < 7; i++)
+        GameObject root = Utile.FindGameObject(Lobby_SceneGameObjects.MonsterCardButtonGroup_CardCollection);
+        GameObject prefab = Utile.LoadPrefab(Prefabs.LobbyScene.MonsterCardButton);
+        for (int i = 0; i < 18; i++)
         {
             var go = Utile.CreateClone(prefab);
             go.transform.SetParent(root.transform);
