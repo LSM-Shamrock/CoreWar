@@ -35,6 +35,9 @@ public static class Utile
         return cols.Any(c => c.attachedRigidbody != null && c.attachedRigidbody.gameObject.name == checkRigidbodyName.ToString());
     }
 
+
+
+
     // Polygon
     public static void AsyncPolygon(PolygonCollider2D polygonCollider, Sprite sprite)
     {
@@ -59,11 +62,15 @@ public static class Utile
     }
 
 
+
+
     public static Quaternion Direction2Rotation(Vector2 direction)
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         return Quaternion.Euler(0, 0, angle);
     }
+
+
 
     public static string Enum2Path(Enum pathEnum)
     {
@@ -74,6 +81,9 @@ public static class Utile
         string path = root + '/' + name;
         return path;
     }
+
+
+
 
 
     // Mouse
@@ -89,6 +99,9 @@ public static class Utile
     {
         return MousePosition().y;
     }
+
+
+
 
 
     // Random
@@ -112,6 +125,10 @@ public static class Utile
     }
 
 
+
+
+
+
     // Load
     private static readonly Dictionary<(Type, string), object> s_resources = new();
     public static T LoadResource<T>(string path) where T : UnityEngine.Object
@@ -127,6 +144,13 @@ public static class Utile
     }
 
 
+
+
+
+
+
+
+
     // Color
     public static Color StringToColor(string code)
     {
@@ -140,6 +164,7 @@ public static class Utile
     {
         return new Color(r / 255f, g / 255f, b / 255f);
     }
+
 
     // Effect
     public static void SetTransparency(ref Color color, float value)

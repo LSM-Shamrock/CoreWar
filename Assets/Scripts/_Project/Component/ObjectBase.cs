@@ -7,9 +7,7 @@ using UnityEngine.EventSystems;
 
 public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-
-    #region 유틸
-    
+    #region  Util
     // 흐름
     protected IEnumerable Count(int n)
     {
@@ -18,9 +16,12 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
             yield return i;
         }
     }
-    protected WaitForFixedUpdate WaitForFixedUpdate()
+    protected WaitForFixedUpdate WaitForFixedUpdate
     {
-        return new WaitForFixedUpdate();
+        get
+        {
+            return new WaitForFixedUpdate();
+        }
     }
     protected WaitForSeconds WaitForSeconds(float seconds)
     {
@@ -39,10 +40,10 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
     // 입력
     protected Action OnClickAction;
     protected bool IsContactMousePointer { get; private set; }
-    protected bool IsMouseClicked { get; private set; }
+    protected bool IsClickedMouse { get; private set; }
     protected virtual void Update()
     {
-        IsMouseClicked = Input.GetMouseButton(0);
+        IsClickedMouse = Input.GetMouseButton(0);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -56,9 +57,9 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
     {
         IsContactMousePointer = false;
     }
+    #endregion
 
-
-    // 말하기
+    #region Speechbubble
     static Transform SpeechbubbleRoot
     {
         get
@@ -103,6 +104,33 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
         yield return new WaitForSeconds(seconds);
         HideSpeachbubble();
     }
-    
     #endregion
+
+    public static readonly Dictionary<MonsterType, SummonInfo> MonsterSummonInfo = new()
+    {
+        [MonsterType.Slime] = new() { price = 496, cooltime = 4, },
+        [MonsterType.Bat] = new() { price = 730, cooltime = 4, },
+        [MonsterType.Goblin] = new() { price = 970, cooltime = 10, },
+        [MonsterType.WaveSpirit] = new() { price = 1330, cooltime = 20, },
+        [MonsterType.Skeleton] = new() { price = 1710, cooltime = 20, },
+        [MonsterType.Dragon] = new() { price = 1840, cooltime = 20, },
+        [MonsterType.Golem] = new() { price = 2840, cooltime = 15, },
+        [MonsterType.ElecDragon] = new() { price = 4170, cooltime = 35, },
+    };
+
+
+    protected Sprite GetMonsterButtonSprite(MonsterType monsterType)
+    {
+        return Utile.LoadResource<Sprite>($"Sprites/MonsterButtons/{monsterType.ToString()}");
+    }
+
+    public static float Difficulty;
+    public static MonsterType[] Deck = new MonsterType[7];
+    public static MonsterType SelectedCard;
+
+    public static Dictionary<MonsterType, float> MonsterOnCooltime = new Dictionary<MonsterType, float>();
+    public static int Coin;
+    public static MonsterType AllyToSummon;
+    public static float CoinBooster;
+    public static int CoinBoosterPrice => (int)(CoinBooster * 350);
 }

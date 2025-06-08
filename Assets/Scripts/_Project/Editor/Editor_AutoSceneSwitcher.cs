@@ -6,34 +6,40 @@ using UnityEngine;
 [InitializeOnLoad]
 public static class Editor_AutoSceneSwitcher
 {
-    static Scenes startScene = Scenes.LobbyScene;
+    static readonly string SceneRoot = "Assets/_Scenes";
+
+    static readonly Scenes startScene = Scenes.LobbyScene;
+
+
 
     static Editor_AutoSceneSwitcher()
     {
         EditorApplication.playModeStateChanged += OnPlayModeChanged;
     }
-
+    
     static void OnPlayModeChanged(PlayModeStateChange state)
     {
-        string StartScenePath = "Assets/Scenes/" + startScene.ToString() + ".unity";
-        string PrefsKey = "Exited_Scene_Path";
+        string startScenePath = $"{SceneRoot}/{startScene.ToString()}.unity";
+        string saveScenePathKey = "SAVED_SCENE_PATH";
 
         if (state == PlayModeStateChange.ExitingEditMode)
         {
-            string exitingScenePath = EditorSceneManager.GetActiveScene().path;
-            EditorPrefs.SetString(PrefsKey, exitingScenePath);
-            if (exitingScenePath != StartScenePath)
+            string activeScenePath = EditorSceneManager.GetActiveScene().path;
+
+            EditorPrefs.SetString(saveScenePathKey, activeScenePath);
+
+            if (activeScenePath != startScenePath)
             {
                 if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-                    EditorSceneManager.OpenScene(StartScenePath);
+                    EditorSceneManager.OpenScene(startScenePath);
                 else
                     EditorApplication.isPlaying = false;
             }
         }
         if (state == PlayModeStateChange.EnteredEditMode)
         {
-            string exitedScenePath = EditorPrefs.GetString(PrefsKey);
-            EditorSceneManager.OpenScene(exitedScenePath);
+            string savedScenePath = EditorPrefs.GetString(saveScenePathKey);
+            EditorSceneManager.OpenScene(savedScenePath);
         }
     }
 }

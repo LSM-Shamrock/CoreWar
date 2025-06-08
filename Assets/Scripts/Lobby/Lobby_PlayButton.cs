@@ -20,14 +20,14 @@ public class Lobby_PlayButton : ObjectBase
     {
         while (true)
         {
-            yield return WaitForFixedUpdate();
+            yield return WaitForFixedUpdate;
 
             _textbox.BackgroundColor = Utile.RGB255(255, 200, 0);
             _textbox.TextColor = Utile.RGB255(255, 255, 255);
-            if (IsMouseClicked && IsContactMousePointer)
+            if (IsClickedMouse && IsContactMousePointer)
             {
                 transform.localScale = Vector3.one * 20.1f;
-                yield return WaitUntil(() => !IsMouseClicked);
+                yield return WaitUntil(() => !IsClickedMouse);
                 transform.localScale = Vector3.one * 30.1f;
                 if (IsContactMousePointer)
                 {

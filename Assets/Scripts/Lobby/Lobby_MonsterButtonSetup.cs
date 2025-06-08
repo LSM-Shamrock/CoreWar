@@ -23,7 +23,7 @@ public class Lobby_MonsterButtonSetup : ObjectBase
         _deckRoot = transform.GetChild(0);
         _listRoot = transform.GetChild(1);
 
-        MonsterType[] monsterTypes = Data.MonsterSummonInfos.Keys.ToArray();
+        MonsterType[] monsterTypes = MonsterSummonInfo.Keys.ToArray();
 
         for (int i = 0; i < 7; i++)
         {

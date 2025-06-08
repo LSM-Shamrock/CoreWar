@@ -24,7 +24,7 @@ public class Lobby_MonsterButton : ObjectBase
         set
         {
             _monsterType = value;
-            _image.sprite = Utile.LoadResource<Sprite>($"Sprites/MonsterButtons/{_monsterType.ToString()}");
+            _image.sprite = GetMonsterButtonSprite(value);
         }
     }
 
@@ -47,17 +47,17 @@ public class Lobby_MonsterButton : ObjectBase
     {
         if (_buttonType == MonsterButtonType.List)
         {
-            if (Var.SelectedCard == MonsterType) 
-                Var.SelectedCard = MonsterType.None;
+            if (SelectedCard == MonsterType) 
+                SelectedCard = MonsterType.None;
             else
-                Var.SelectedCard = MonsterType;
+                SelectedCard = MonsterType;
         }
         else
         {
-            if (Var.SelectedCard != MonsterType.None)
+            if (SelectedCard != MonsterType.None)
             {
-                MonsterType = Var.SelectedCard;
-                Var.SelectedCard = MonsterType.None;
+                MonsterType = SelectedCard;
+                SelectedCard = MonsterType.None;
             }
         }
     }
@@ -66,14 +66,14 @@ public class Lobby_MonsterButton : ObjectBase
     {
         while (true)
         {
-            SummonInfo summonInfo = Data.MonsterSummonInfos[MonsterType];
+            SummonInfo summonInfo = MonsterSummonInfo[MonsterType];
 
             if (IsContactMousePointer)
                 ShowSpeechbubble($"가격:{summonInfo.price}코인, 쿨타임:{summonInfo.cooltime}초");
             else
                 HideSpeachbubble();
 
-            yield return WaitForFixedUpdate();
+            yield return WaitForFixedUpdate;
         }
     }
 
@@ -84,17 +84,17 @@ public class Lobby_MonsterButton : ObjectBase
 
         while (true)
         {
-            if (Var.SelectedCard == MonsterType)
+            if (SelectedCard == MonsterType)
                 transform.localScale = Vector3.one * 20f;
             else
                 transform.localScale = Vector3.one * 30f;
 
-            if (Var.Deck.Any(t => t == MonsterType))
+            if (Deck.Any(t => t == MonsterType))
                 Utile.SetBrightness(_image, -0.5f);
             else
                 Utile.SetBrightness(_image, 0f);
 
-            yield return WaitForFixedUpdate();
+            yield return WaitForFixedUpdate;
         }
     }
 
@@ -105,8 +105,8 @@ public class Lobby_MonsterButton : ObjectBase
 
         while (true)
         {
-            Var.Deck[_number] = MonsterType;
-            yield return WaitForFixedUpdate();
+            Deck[_number] = MonsterType;
+            yield return WaitForFixedUpdate;
         }
     }
 }

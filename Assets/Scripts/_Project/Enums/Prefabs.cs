@@ -10,4 +10,9 @@ public class Prefabs
     {
         MonsterButton,
     }
+
+    public enum Play
+    {
+        MonsterSummonButton
+    }
 }

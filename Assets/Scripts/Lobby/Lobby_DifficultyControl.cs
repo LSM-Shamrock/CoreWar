@@ -25,18 +25,18 @@ public class Lobby_DifficultyControl : ObjectBase
             if (IsContactMousePointer)
             {
                 transform.localScale = Vector3.one * 25f;
-                if (IsMouseClicked)
+                if (IsClickedMouse)
                 {
                     transform.localScale = Vector3.one * 20f;
 
                     switch (_increaseType)
                     {
-                        case IncreaseType.Up: Var.Difficulty += 0.05f; break;
-                        case IncreaseType.Down: Var.Difficulty -= 0.05f; break;
+                        case IncreaseType.Up: Difficulty += 0.05f; break;
+                        case IncreaseType.Down: Difficulty -= 0.05f; break;
                     }
-                    Var.Difficulty = Mathf.Clamp(Var.Difficulty, 0.75f, 1.5f);
+                    Difficulty = Mathf.Clamp(Difficulty, 0.75f, 1.5f);
 
-                    yield return WaitUntil(() => !IsMouseClicked);
+                    yield return WaitUntil(() => !IsClickedMouse);
                 }
             }
             yield return null;
