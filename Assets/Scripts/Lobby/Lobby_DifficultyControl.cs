@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Lobby_DifficultyControlButton : ObjectBase
+public class Lobby_DifficultyControl : ObjectBase
 {
     enum IncreaseType
     {
@@ -31,10 +31,10 @@ public class Lobby_DifficultyControlButton : ObjectBase
 
                     switch (_increaseType)
                     {
-                        case IncreaseType.Up: Difficulty += 0.05f; break;
-                        case IncreaseType.Down: Difficulty -= 0.05f; break;
+                        case IncreaseType.Up: Var.Difficulty += 0.05f; break;
+                        case IncreaseType.Down: Var.Difficulty -= 0.05f; break;
                     }
-                    Difficulty = Mathf.Clamp(Difficulty, 0.75f, 1.5f);
+                    Var.Difficulty = Mathf.Clamp(Var.Difficulty, 0.75f, 1.5f);
 
                     yield return WaitUntil(() => !IsMouseClicked);
                 }

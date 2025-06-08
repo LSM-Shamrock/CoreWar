@@ -6,8 +6,8 @@ public class Prefabs
         Speechbubble,
     }
 
-    public enum LobbyScene
+    public enum Lobby
     {
-        MonsterCardButton,
+        MonsterButton,
     }
 }

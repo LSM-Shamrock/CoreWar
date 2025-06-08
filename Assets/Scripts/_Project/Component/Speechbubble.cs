@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,15 +25,14 @@ public class Speechbubble : ObjectBase
     {
         if (_master == null)
             return;
-
         Vector3 half = ((RectTransform)transform).rect.size / 2f;
-
-        transform.position = _master.position;
-        Vector3 showDirection = Vector3.zero;
-        showDirection.x = transform.position.x < 0 ? 1 : -1;
-        showDirection.y = transform.position.y < 0 ? 1 : -1;
-        transform.position += showDirection * 40f;
-        transform.position += Vector3.Scale(showDirection, half);
+        Vector3 position = _master.position;
+        Vector3 direction = new Vector3();
+        direction.x = position.x < 0 ? 1 : -1;
+        direction.y = position.y < 0 ? 1 : -1;
+        position += Vector3.Scale(direction, half);
+        position += Vector3.Scale(direction, new Vector3(20, 10));
+        transform.position = position;
     }
     private void FixedUpdate()
     {

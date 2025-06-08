@@ -14,7 +14,7 @@ public class Lobby_DifficultyText : ObjectBase
     {
         _textbox = GetComponent<Textbox>();
 
-        Difficulty = 1f;
+        Var.Difficulty = 1f;
         StartCoroutine(Loop_Update());
     }
 
@@ -22,11 +22,11 @@ public class Lobby_DifficultyText : ObjectBase
     {
         while (true)
         {
-            _textbox.Text = $"난이도:{Difficulty:F2}";
+            _textbox.Text = $"난이도:{Var.Difficulty:F2}";
             _textbox.BackgroundColor = Color.HSVToRGB(0f, 0f, 0.75f);
 
             Color textColor;
-            switch (Difficulty)
+            switch (Var.Difficulty)
             {
                 case 1.5f:
                     textColor = new Color(1f, 0f, 0f);
