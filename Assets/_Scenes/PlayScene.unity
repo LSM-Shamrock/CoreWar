@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 433484307}
   - component: {fileID: 433484306}
   m_Layer: 5
-  m_Name: Front
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,7 +1463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1750644797}
   m_Layer: 0
-  m_Name: Back
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
