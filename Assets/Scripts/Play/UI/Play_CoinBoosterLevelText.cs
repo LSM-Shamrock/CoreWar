@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Play_CoinBoosterLevelText : ObjectBase
+public class Play_CoinBoosterLevelText : Play_ObjectBase
 {
     Text _text;
 

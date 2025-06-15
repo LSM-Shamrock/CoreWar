@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Play_CoinText : ObjectBase
+public class Play_CoinText : Play_ObjectBase
 {
     Textbox _textbox;
 

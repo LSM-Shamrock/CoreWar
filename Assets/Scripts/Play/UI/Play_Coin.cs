@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class Play_Coin : ObjectBase
+public class Play_Coin : Play_ObjectBase
 {
     private void Start()
     {

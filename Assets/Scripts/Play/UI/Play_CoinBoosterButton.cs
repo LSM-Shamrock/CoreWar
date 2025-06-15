@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Play_CoinBoosterButton : ObjectBase
+public class Play_CoinBoosterButton : Play_ObjectBase
 {
     Image _image;
     

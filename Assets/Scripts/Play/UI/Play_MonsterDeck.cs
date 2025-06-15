@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Play_MonsterDeck : ObjectBase
+public class Play_MonsterDeck : Play_ObjectBase
 {
     private void Start()
     {

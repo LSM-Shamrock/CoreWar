@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Play_CoinBoosterPriceText : ObjectBase
+public class Play_CoinBoosterPriceText : Play_ObjectBase
 {
     Text _text;
 

@@ -1,5 +1,5 @@
 ﻿
-public class Prefabs 
+public class Prefabs
 {
     public enum _Core
     {
@@ -13,6 +13,8 @@ public class Prefabs
 
     public enum Play
     {
-        MonsterSummonButton
+        MonsterSummonButton,
+        Monster,
     }
 }
+

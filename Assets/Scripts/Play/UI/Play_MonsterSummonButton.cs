@@ -4,7 +4,7 @@ using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Play_MonsterSummonButton : ObjectBase
+public class Play_MonsterSummonButton : Play_ObjectBase
 {
     Image _image;
     int _deckIndex;
@@ -39,7 +39,7 @@ public class Play_MonsterSummonButton : ObjectBase
                 {
                     MonsterOnCooltime[monsterType] = cooltime;
                     Coin -= price;
-                    AllyToSummon = monsterType;
+                    SummonAlly = monsterType;
                     
                     while (MonsterOnCooltime[monsterType] > 0f)
                     {

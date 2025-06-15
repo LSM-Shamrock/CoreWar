@@ -1,5 +1,5 @@
 ﻿
-public class Sprites 
+public class Sprites
 {
     public enum MonsterButtons
     {
@@ -11,6 +11,5 @@ public class Sprites
         Dragon,
         Golem,
         ElecDragon,
-
     }
 }

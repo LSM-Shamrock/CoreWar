@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Play_MonsterPriceText : ObjectBase
+public class Play_MonsterPriceText : Play_ObjectBase
 {
     Text _textbox;
     int _deckIndex;

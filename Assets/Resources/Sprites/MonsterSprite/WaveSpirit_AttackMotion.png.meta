@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fb803cb46baab7942913ef9826408485
+guid: 3305fd917e6444b479d8591acc0317d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7874934471170645357
-    second: DarkSkeleton_0
+      213: 1960616485543084657
+    second: WaveSpirit_AttackMotion_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +56,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -126,33 +126,125 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DarkSkeleton_0
+      name: WaveSpirit_AttackMotion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 210
-        height: 180
+        width: 340
+        height: 241
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 392256852dc96b290800000000000000
-      internalID: -7874934471170645357
+      spriteID: 17202994e42853b10800000000000000
+      internalID: 1960616485543084657
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
     customData: 
-    physicsShape: []
+    physicsShape:
+    - - {x: 12, y: -135}
+      - {x: 10, y: -133}
+      - {x: -8, y: -133}
+      - {x: -8, y: -115}
+      - {x: -10, y: -113}
+      - {x: -28, y: -113}
+      - {x: -28, y: -77}
+      - {x: -10, y: -77}
+      - {x: -8, y: -75}
+      - {x: -8, y: -57}
+      - {x: 10, y: -57}
+      - {x: 12, y: -55}
+      - {x: 12, y: -37}
+      - {x: 128, y: -37}
+      - {x: 128, y: -55}
+      - {x: 130, y: -57}
+      - {x: 170, y: -57}
+      - {x: 170, y: -43}
+      - {x: 142, y: -43}
+      - {x: 142, y: -37}
+      - {x: 170, y: -37}
+      - {x: 170, y: -23}
+      - {x: 142, y: -23}
+      - {x: 142, y: -17}
+      - {x: 170, y: -17}
+      - {x: 170, y: -3}
+      - {x: 130, y: -3}
+      - {x: 128, y: -5}
+      - {x: 128, y: -23}
+      - {x: 42, y: -23}
+      - {x: 42, y: -15}
+      - {x: 40, y: -13}
+      - {x: 22, y: -13}
+      - {x: 22, y: -5}
+      - {x: 20, y: -3}
+      - {x: 12, y: -3}
+      - {x: 12, y: 95}
+      - {x: 10, y: 97}
+      - {x: -140, y: 97}
+      - {x: -142, y: 95}
+      - {x: -142, y: -3}
+      - {x: -148, y: -3}
+      - {x: -148, y: 5}
+      - {x: -150, y: 7}
+      - {x: -160, y: 7}
+      - {x: -162, y: 5}
+      - {x: -162, y: -3}
+      - {x: -170, y: -3}
+      - {x: -170, y: -37}
+      - {x: -150, y: -37}
+      - {x: -148, y: -35}
+      - {x: -148, y: -17}
+      - {x: -142, y: -17}
+      - {x: -142, y: -55}
+      - {x: -140, y: -57}
+      - {x: -122, y: -57}
+      - {x: -122, y: -73}
+      - {x: -150, y: -73}
+      - {x: -152, y: -75}
+      - {x: -152, y: -83}
+      - {x: -160, y: -83}
+      - {x: -162, y: -85}
+      - {x: -162, y: -93}
+      - {x: -170, y: -93}
+      - {x: -170, y: -145}
+      - {x: 12, y: -145}
+    - - {x: -107, y: -82}
+      - {x: -107, y: -78}
+      - {x: -103, y: -78}
+      - {x: -103, y: -82}
+    - - {x: -137, y: -132}
+      - {x: -137, y: -125}
+      - {x: -140, y: -122}
+      - {x: -147, y: -122}
+      - {x: -147, y: -98}
+      - {x: -140, y: -98}
+      - {x: -137, y: -95}
+      - {x: -137, y: -88}
+      - {x: -133, y: -88}
+      - {x: -133, y: -95}
+      - {x: -130, y: -98}
+      - {x: -120, y: -98}
+      - {x: -117, y: -95}
+      - {x: -117, y: -88}
+      - {x: -113, y: -88}
+      - {x: -113, y: -95}
+      - {x: -110, y: -98}
+      - {x: -103, y: -98}
+      - {x: -103, y: -112}
+      - {x: -120, y: -112}
+      - {x: -123, y: -115}
+      - {x: -123, y: -132}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -161,7 +253,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DarkSkeleton_0: -7874934471170645357
+      WaveSpirit_AttackMotion_0: 1960616485543084657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

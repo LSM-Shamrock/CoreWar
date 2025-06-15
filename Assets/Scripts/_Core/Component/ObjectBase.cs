@@ -5,6 +5,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+public enum AllyOrEnemy
+{
+    Ally,
+    Enemy,
+}
+
+public enum GroundOrFlying
+{
+    Ground,
+    Flying,
+}
+
+public enum MonsterType
+{
+    None,
+    Slime,
+    Bat,
+    Dragon,
+    Skeleton,
+    Golem,
+    ElecDragon,
+    Goblin,
+    WaveSpirit,
+
+    EnemySlime,
+    DevilCloud,
+    DarkSkeleton,
+    EnemySpider,
+    BomBot,
+    Cyclops,
+}
+
 public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     #region  Util
@@ -106,6 +138,11 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
     }
     #endregion
 
+    public static float Difficulty;
+    public static MonsterType[] Deck = new MonsterType[7];
+    public static MonsterType SelectedCard;
+
+
     public static readonly Dictionary<MonsterType, SummonInfo> MonsterSummonInfo = new()
     {
         [MonsterType.Slime] = new() { price = 496, cooltime = 4, },
@@ -118,19 +155,14 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
         [MonsterType.ElecDragon] = new() { price = 4170, cooltime = 35, },
     };
 
-
     protected Sprite GetMonsterButtonSprite(MonsterType monsterType)
     {
-        return Utile.LoadResource<Sprite>($"Sprites/MonsterButtons/{monsterType.ToString()}");
+        return Utile.LoadResource<Sprite>($"Sprites/MonsterButtons/{monsterType}");
     }
 
-    public static float Difficulty;
-    public static MonsterType[] Deck = new MonsterType[7];
-    public static MonsterType SelectedCard;
+    protected Sprite GetMonsterSprite(MonsterType monsterType)
+    {
+        return Utile.LoadResource<Sprite>($"Sprites/MonsterSprite/{monsterType}");
+    }
 
-    public static Dictionary<MonsterType, float> MonsterOnCooltime = new Dictionary<MonsterType, float>();
-    public static int Coin;
-    public static MonsterType AllyToSummon;
-    public static float CoinBooster;
-    public static int CoinBoosterPrice => (int)(CoinBooster * 350);
 }

@@ -41,16 +41,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Sky
+  - name: Bg
     uniqueID: 3443985947
     locked: 0
-  - name: Ground
-    uniqueID: 2444113281
+  - name: Monster
+    uniqueID: 3693950495
     locked: 0
-  - name: Core
-    uniqueID: 2662754779
-    locked: 0
-  - name: UI
+  - name: Ui
     uniqueID: 1547779213
     locked: 0
   - name: Speechbubble
