@@ -4,10 +4,10 @@ public enum MonsterType
     None,
     Slime,
     Bat,
-    Goblin,
-    WaveSpirit,
-    Skeleton,
     Dragon,
+    Skeleton,
     Golem,
     ElecDragon,
+    Goblin,
+    WaveSpirit,
 }

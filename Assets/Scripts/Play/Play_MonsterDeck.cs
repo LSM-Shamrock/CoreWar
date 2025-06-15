@@ -14,9 +14,11 @@ public class Play_MonsterDeck : ObjectBase
         for (int i = 0; i < 7; i++)
         {
             var go = Utile.CreateClone(prefab);
-            var button = go.GetComponent<Play_MonsterSummonButton>();
-            button.transform.SetParent(transform);
+            var button = go.GetComponentInChildren<Play_MonsterSummonButton>();
+            var priceText = go.GetComponentInChildren<Play_MonsterPriceText>();
+            go.transform.SetParent(transform);
             button.Init(i);
+            priceText.Init(i);  
         }
     }
 }

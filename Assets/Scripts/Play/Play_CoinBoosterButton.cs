@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Play_CoinBooster : ObjectBase
+public class Play_CoinBoosterButton : ObjectBase
 {
     Image _image;
     
@@ -14,7 +14,8 @@ public class Play_CoinBooster : ObjectBase
     private void Init()
     {
         _image = GetComponent<Image>();
-        
+
+        CoinBooster = 1f;
         StartCoroutine(Loop());
     }
 

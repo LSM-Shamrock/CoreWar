@@ -82,7 +82,7 @@ public abstract class ObjectBase : MonoBehaviour, IPointerClickHandler, IPointer
         }
         else
         {
-            var prefab = Utile.LoadResource<GameObject>(Utile.Enum2Path(Prefabs._Project.Speechbubble));
+            var prefab = Utile.LoadResource<GameObject>(Utile.Enum2Path(Prefabs._Core.Speechbubble));
             var go = Instantiate(prefab, SpeechbubbleRoot);
             speechbubble = go.GetComponent<Speechbubble>();
             speechbubble.Init(transform);

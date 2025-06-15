@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Play_MonsterSummonButton : ObjectBase
 {
     Image _image;
-
     int _deckIndex;
 
     public void Init(int deckIndex)
@@ -15,7 +14,6 @@ public class Play_MonsterSummonButton : ObjectBase
         _deckIndex = deckIndex;
         _image = GetComponent<Image>();
         _image.sprite = GetMonsterButtonSprite(Deck[deckIndex]);
-
         StartCoroutine(Loop_Summon());
         StartCoroutine(Loop_Brightness());
     }

@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using Unity.VisualScripting.YamlDotNet.Serialization.NodeTypeResolvers;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Lobby_MonsterButtonSetup : ObjectBase
 {
@@ -23,7 +20,8 @@ public class Lobby_MonsterButtonSetup : ObjectBase
         _deckRoot = transform.GetChild(0);
         _listRoot = transform.GetChild(1);
 
-        MonsterType[] monsterTypes = MonsterSummonInfo.Keys.ToArray();
+        MonsterType[] monsterTypes = Enum.GetValues(typeof(MonsterType))
+            .Cast<MonsterType>().Where(a => MonsterSummonInfo.ContainsKey(a)).ToArray();
 
         for (int i = 0; i < 7; i++)
         {
