@@ -6,7 +6,7 @@ using UnityEngine;
 [InitializeOnLoad]
 public static class Editor_AutoSceneSwitcher
 {
-    static readonly string SceneRoot = "Assets/@Scenes";
+    static readonly string SceneRoot = "Assets/Scenes";
     static readonly Scenes startScene = Scenes.LobbyScene;
 
     static Editor_AutoSceneSwitcher()
